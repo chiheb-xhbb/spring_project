@@ -11,7 +11,7 @@ public class Universite {
     private String nomUniversite;
     private String adresse;
 
-    // ASSOCIATION
+    // ASSOCIATIONS
     @OneToOne
     private Foyer foyer;
 
