@@ -4,11 +4,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import tn.fst.tpfoyer.entity.Chambre;
 import tn.fst.tpfoyer.repositories.ChambreRepository;
-import tn.fst.tpfoyer.service.IChambreService;
 
 @Service
 @AllArgsConstructor
 public class ChambreServiceImpl implements IChambreService {
+    //CRUD without override
     ChambreRepository chambreRepository;
     public List<Chambre> retrieveAllChambres() {
         return chambreRepository.findAll();

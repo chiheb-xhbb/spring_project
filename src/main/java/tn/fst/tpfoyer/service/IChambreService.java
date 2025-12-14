@@ -2,6 +2,7 @@ package tn.fst.tpfoyer.service;
 import tn.fst.tpfoyer.entity.Chambre;
 import java.util.List;
 public interface IChambreService {
+    ///CRUD
     public List<Chambre> retrieveAllChambres();
     public Chambre retrieveChambre(Long chambreId);
     public Chambre addChambre(Chambre c);
