@@ -14,6 +14,7 @@ import tn.fst.tpfoyer.service.ChambreServiceImpl;
 @RequestMapping("/chambre")
 public class ChambreRestController {
     IChambreService chambreService;
+    //CRUD
     // http://localhost:8089/tpfoyer/chambre/retrieve-all-chambres
     @GetMapping("/retrieve-all-chambres")
     public List<Chambre> getChambres() {
