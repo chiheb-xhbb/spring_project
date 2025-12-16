@@ -5,55 +5,54 @@ import java.util.List;
 
 @Entity
 public class Chambre {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChambre;
-
     private Long numeroChambre;
-
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
-
     // ASSOCIATIONS
     @ManyToOne
     private Bloc bloc;
-
     @OneToMany(mappedBy = "chambre")
     private List<Reservation> reservations;
-
-    // Constructeurs
+    // Constructors
     public Chambre() {}
-
     public Chambre(Long idChambre, Long numeroChambre, TypeChambre typeC) {
         this.idChambre = idChambre;
         this.numeroChambre = numeroChambre;
         this.typeC = typeC;
     }
-
     // Getters
     public Long getIdChambre() {
         return idChambre;
     }
-
     public Long getNumeroChambre() {
         return numeroChambre;
     }
-
     public TypeChambre getTypeC() {
         return typeC;
     }
-
+    public Bloc getBloc() {
+        return bloc;
+    }
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
     // Setters
     public void setIdChambre(Long idChambre) {
         this.idChambre = idChambre;
     }
-
     public void setNumeroChambre(Long numeroChambre) {
         this.numeroChambre = numeroChambre;
     }
-
     public void setTypeC(TypeChambre typeC) {
         this.typeC = typeC;
+    }
+    public void setBloc(Bloc bloc) {
+        this.bloc = bloc;
+    }
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }

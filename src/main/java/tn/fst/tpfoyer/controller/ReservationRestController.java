@@ -45,4 +45,21 @@ public class ReservationRestController {
     public Reservation modifyReservation(@RequestBody Reservation reservation) {
         return reservationService.modifyReservation(reservation);
     }
+    //CAS 5
+    // http://localhost:8089/tpfoyer/reservation/assign-chambre-to-reservation/{chambreId}/{reservationId}
+    @PutMapping("/assign-chambre-to-reservation/{chambreId}/{reservationId}")
+    public void assignChambreToReservation(
+            @PathVariable Long chambreId,
+            @PathVariable Long reservationId) {
+        reservationService.assignChambreToReservation(chambreId, reservationId);
+    }
+    //CAS 6
+    // http://localhost:8089/tpfoyer/reservation/assign-etudiant-to-reservation/{etudiantId}/{reservationId}
+    @PutMapping("/assign-etudiant-to-reservation/{etudiantId}/{reservationId}")
+    public void assignEtudiantToReservation(
+            @PathVariable Long etudiantId,
+            @PathVariable Long reservationId) {
+        reservationService.assignEtudiantToReservation(etudiantId, reservationId);
+    }
+
 }

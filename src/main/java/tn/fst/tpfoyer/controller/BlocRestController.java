@@ -43,4 +43,32 @@ public class BlocRestController {
     public Bloc modifyBloc(@RequestBody Bloc bloc) {
         return blocService.modifyBloc(bloc);
     }
+    //CAS 1
+    //http://localhost:8089/tpfoyer/bloc/add-bloc-with-chambres
+    @PostMapping("/add-bloc-with-chambres")
+    public Bloc addBlocWithChambres(@RequestBody Bloc bloc) {
+        return blocService.addBlocWithChambres(bloc);
+
+    }
+    //Cas 2: Affecter une chambre existante à un bloc existant
+    //http://localhost:8089/tpfoyer/bloc/assign-chambre-to-bloc/{chambreId}/{blocId}
+
+    @PutMapping("/assign-chambre-to-bloc/{chambreId}/{blocId}")
+    public void assignChambreToBloc(
+            @PathVariable Long chambreId,
+            @PathVariable Long blocId) {
+
+        blocService.assignChambreToBloc(chambreId, blocId);
+    }
+    // Cas 3: Affecter un bloc existant à un foyer existant
+    // http://localhost:8089/tpfoyer/bloc/assign-bloc-to-foyer/{blocId}/{foyerId}
+    @PutMapping("/assign-bloc-to-foyer/{blocId}/{foyerId}")
+    public void assignBlocToFoyer(
+            @PathVariable Long blocId,
+            @PathVariable Long foyerId) {
+        blocService.assignBlocToFoyer(blocId, foyerId);
+    }
+
+
+
 }

@@ -9,4 +9,7 @@ public interface IUniversiteService {
     public Universite addUniversite(Universite universite);
     public void removeUniversite(Long universiteId);
     public Universite modifyUniversite(Universite universite);
+    /// CAS4
+    void assignFoyerToUniversite(Long foyerId, Long universiteId);
+
 }

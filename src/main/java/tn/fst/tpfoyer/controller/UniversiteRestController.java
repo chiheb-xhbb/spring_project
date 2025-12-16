@@ -45,4 +45,13 @@ public class UniversiteRestController {
     public Universite modifyUniversite(@RequestBody Universite universite) {
         return universiteService.modifyUniversite(universite);
     }
+    //CAS 4
+    // http://localhost:8089/tpfoyer/universite/assign-foyer-to-universite/{foyerId}/{universiteId}
+    @PutMapping("/assign-foyer-to-universite/{foyerId}/{universiteId}")
+    public void assignFoyerToUniversite(
+            @PathVariable Long foyerId,
+            @PathVariable Long universiteId) {
+        universiteService.assignFoyerToUniversite(foyerId, universiteId);
+    }
+
 }
